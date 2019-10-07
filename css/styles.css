@@ -55,8 +55,11 @@ html, body {
   }
 
   .btn:hover {
-    background-color: #ff0084;
+    background-image: radial-gradient(#FF0099, #493240);
+    border: solid black 1px;
+    color: #fff;
   }
+  
 
   .card-header {
     color: #8f8f8f;
