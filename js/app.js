@@ -14,66 +14,69 @@ var fireConfig = {
 
   //event listener for user input
 $('#search').on('click', function(){
+
   event.preventDefault();
+
   var barName = $('#set-name').val().trim();
   var dest = $('#destination').val().trim();
-  var firstTime = $('#time').val().trim();
+  var firstBar = moment($('#time').val().trim(),"HH:mm").format("HH:mm");
   var freq = $('#frequency').val().trim();
 
   var addBar = {
     name: barName,
     location: dest,
-    runtime: firstTime,
+    start: firstBar,
     frequency: freq
   }
   
-  if (barName == '' || dest == '' || firstTime == '' || freq == ''){
+  if (barName == '' || dest == '' || firstBar == '' || freq == ''){
     swal('You need to enter every value')
     return;
   }
 
-  database.ref().push(addBar)
-
+  database.ref().push(addBar);
+  console.log(addBar);
 
 // clearing out forms
   $('#set-name').val("");
   $('#destination').val("");
   $('#time').val("");
   $('#frequency').val("");
+
 })
 
 
 // Adding a bar to the table
 database.ref().on("child_added", function (childReturn){
+
   console.log(childReturn.val());
+
   var barName = childReturn.val().name;
   var dest = childReturn.val().location;
-  var firstTime = childReturn.val().runtime;
+  var firstBar = childReturn.val().start;
   var freq = childReturn.val().frequency;
 
-// var firstTimeConv = moment(firstTime, "HH:mm");
-// var currentTime = moment().format("HH:mm");
-// var timeDiff = moment().diff(moment(firstTimeConv), "minutes");
-// var timeRemain = timeDiff % timeRemain
-// var minToBar = freq - timeRemain;
+  var firstConv = moment(firstBar, "HH:mm")
 
-// var pushBar = moment().add(minToBar, "minutes").format("HH:mm");
-// $("#bar-body").append(
-//   '<tr>'+
-// 				'<td scope="row">' + barName + '</td>' +
-// 				'<td>' + dest + '</td>' +
-// 				'<td>' + freq + '</td>' +
-// 				'<td>' + pushBar + '</td>' +
-// 				'<td>' + minToBar + '</td>' +
-// 			'</tr>'
-// )
+  // var timeNow = moment().format("HH:mm");
 
+  var difference = moment().diff(moment(firstConv), "minutes");
+
+  var remainder = difference % freq;
+
+  var minToBar = freq - remainder;
+
+  var calculatedBar = moment().add(minToBar, "minutes").format("HH:mm");
+
+
+  
+  
 var newBar = $("<tr>").append(
   $("<td>").text(barName),
   $("<td>").text(dest),
   $("<td>").text(freq),
-  // $("<td>").text(insertvariablehere),
-  // $("<td>").text(minAway),
+  $("<td>").text(calculatedBar),
+  $("<td>").text(minToBar),
 );
 $("#bar-body").append(newBar);
 

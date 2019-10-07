@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Notable&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rajdhani|Vibes&display=swap');
 
 html, body {
     height: 100%;
+    /* background-image: linear-gradient(#0b8793,#360033 ); */
     background-image: linear-gradient(#43C6AC, #191654);
     background-size: cover;
     background-repeat: no-repeat;
@@ -42,4 +44,24 @@ html, body {
   .ml11 .letter {
     display: inline-block;
     line-height: 1em;
+  }
+
+  .card {
+    background-image: linear-gradient(#000000, #434343);
+  }
+
+   .toptier, .letters, .fas {
+    color: #ff0084;
+  }
+
+  .btn:hover {
+    background-color: #ff0084;
+  }
+
+  .card-header {
+    color: #8f8f8f;
+  }
+
+  .row {
+    font-family: 'Rajdhani', sans-serif;
   }

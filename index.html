@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Choo choo mthrfckr</title>
+    <title>Choo choo bitch</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 <!-- 
@@ -21,21 +21,11 @@
         </h1>
   
 
-      <!-- <h1 class="jumbotron mt-2" id="myText">Bike Bar Schedule</h1> -->
-
-    <!-- Jumbotron for Title -->
-    <!-- <div class="jumbotron" style="background-color: #20315A ; color: white;">
-      <h1 class="text-center">
-        <strong>
-          <i class="fas fa-biking"></i> Bicycle Bar Schedule</strong>
-      </h1>
-    </div> -->
-
-    <div class="row">
+    <div class="row main">
       <div class="col-sm-12">
         <br>
         
-        <div class="card">
+        <div class="card text-light">
 
           
           <div class="card-header">
@@ -44,15 +34,15 @@
           </div>
 
           
-          <div class="card-body" id="times-section">
+          <div class="card-body">
               <table class="table table-striped table-responsive-sm table-responsive-md">
                   <thead class="bar-schedule-head">
                     <tr>
-                      <th scope="col">Bar Name</th>
-                      <th scope="col">Destination</th>
-                      <th scope="col">Frequency</th>
-                      <th scope="col">Next Arrival</th>
-                      <th scope="col">Minutes Away</th>
+                      <th class="toptier" scope="col">Bar Name</th>
+                      <th class="toptier" scope="col">Destination</th>
+                      <th class="toptier" scope="col">Frequency</th>
+                      <th class="toptier" scope="col">Next Arrival</th>
+                      <th class="toptier" scope="col">Minutes Away</th>
                     </tr>
                    </thead>
                          <tbody id="bar-body"></tbody>
@@ -68,7 +58,7 @@
 
         <br>
 
-        <div class="card mb-3">
+        <div class="card mb-3 bg-transparent text-light">
           <div class="card-header">
             <strong>
               <i class="fas fa-biking"></i> Add Bicycle Bar</strong>
@@ -98,12 +88,14 @@
 
               <div class="form-group col-sm-6">
                 <label for="frequency">Frequency (minutes)</label>
-                <input type="number" class="form-control" id="frequency" required>
+                <input type="text" class="form-control" id="frequency" required>
               </div>
 
+              <div class="d-flex col-12"> 
+                <button type="submit" class="btn btn-secondary btn-block" id="search">Add it!</button>
+              </div>
               
-              <button type="submit" class="btn btn-dark" id="search">
-                <i class="fa fa-search"></i> Add it!</button>
+              
 
             </form>
           </div>
