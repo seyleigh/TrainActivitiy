@@ -8,7 +8,7 @@ Bike Bar scheduler using:
 * Javascript
 * Firebase
 * SweetAlert
- - - - - - - - 
+ - - - 
 
  A [link](https://github.com/seyleigh/TrainActivitiy) to the github.
 
