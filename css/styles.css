@@ -60,11 +60,31 @@ html, body {
     color: #fff;
   }
   
+  th {
+    color: #43C6AC;
+    font-size: 1.2rem;
+  }
 
   .card-header {
     color: #8f8f8f;
+    font-size: 1.7rem;
   }
 
   .row {
+    font-family: 'Rajdhani', sans-serif;
+  }
+
+  .swal-overlay {
+    background-color: rgb(255, 0, 153, .5);
+  }
+
+  .swal-modal {
+    background-color: rgba(105, 105, 105, 0.88);
+    color: #fff;
+    
+  }
+
+  .swal-text, .swal-title {
+    color: #fff;
     font-family: 'Rajdhani', sans-serif;
   }

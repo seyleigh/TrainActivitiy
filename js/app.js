@@ -30,7 +30,13 @@ $('#search').on('click', function(){
   }
   
   if (barName == '' || dest == '' || firstBar == '' || freq == ''){
-    swal('You need to enter every value')
+    swal({
+      title: "Okay eager beaver..",
+      text: "You must enter a value for every input",
+      icon: "error",
+      button: false,
+      timer: 4000
+    })
     return;
   }
 
@@ -67,7 +73,6 @@ database.ref().on("child_added", function (childReturn){
   var minToBar = freq - remainder;
 
   var calculatedBar = moment().add(minToBar, "minutes").format("HH:mm");
-
 
   
   
